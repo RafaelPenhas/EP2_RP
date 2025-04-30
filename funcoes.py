@@ -58,4 +58,13 @@ def calcula_pontos_regra_simples(lista):
 
   return dicio2
 
+def calcula_pontos_soma(lista):
+
+  soma = 0
+
+  for i in range(len(lista)):
+    soma += lista[i]
+
+  return soma
+
 
