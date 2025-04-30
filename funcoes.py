@@ -22,6 +22,15 @@ def guardar_dado (dados_rolados, dados_guardados, guardar):
 
    return novo
 
+def remover_dado (dados_rolados, dados_guardados, remover):
+  rolados = []
 
+  for i in range(len(dados_rolados)):
+    rolados.append(dados_rolados[i])
 
+  rolados.append(dados_guardados[remover])
+  del dados_guardados[remover]
+
+  novo = [rolados,dados_guardados]
+  return novo
 
