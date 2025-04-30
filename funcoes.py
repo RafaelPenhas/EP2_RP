@@ -112,5 +112,29 @@ def calcula_pontos_full_house(lista):
     
     elif qnt == 1 or qnt == 4 or qnt == 5:
       return 0
- 
 
+def calcula_pontos_quadra(lista):
+
+  dicio = {}
+  soma = 0
+  n = 0
+
+  for i in range(len(lista)):
+    soma += lista[i]
+    if lista[i] not in dicio:
+      dicio[lista[i]] = 1
+  
+    else:
+      dicio[lista[i]] += 1
+  
+  for num, qnt in dicio.items():
+    if qnt >= 4:
+      n = 1
+
+  if n == 1:
+    return soma
+
+  else:
+    return 0    
+    
+    
