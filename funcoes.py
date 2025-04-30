@@ -136,5 +136,26 @@ def calcula_pontos_quadra(lista):
 
   else:
     return 0    
-    
-    
+
+def calcula_pontos_quina(lista):
+
+  dicio = {}
+  soma = 0
+  n = 0
+
+  for i in range(len(lista)):
+    if lista[i] not in dicio:
+      dicio[lista[i]] = 1
+  
+    else:
+      dicio[lista[i]] += 1
+  
+  for num, qnt in dicio.items():
+    if qnt >= 5:
+      n = 1
+
+  if n == 1:
+    return 50
+
+  else:
+    return 0
