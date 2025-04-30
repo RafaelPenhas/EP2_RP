@@ -7,7 +7,7 @@ def rolar_dados(numero):
   for i in range(numero):
     lista.append(random.randint(1,6))
 
-    return lista
+  return lista
 
 def guardar_dado (dados_rolados, dados_guardados, guardar):
    novo = []
@@ -33,4 +33,29 @@ def remover_dado (dados_rolados, dados_guardados, remover):
 
   novo = [rolados,dados_guardados]
   return novo
+
+def calcula_pontos_regra_simples(lista):
+
+  dicio = {}
+
+  for i in range(len(lista)):
+    if lista[i] not in dicio:
+      dicio[lista[i]] = 1
+    
+    else:
+      dicio[lista[i]]+= 1
+
+  dicio2 = {}
+  lista_num = [1,2,3,4,5,6]
+
+  for num in lista_num:
+    if num in dicio.keys():
+      for num, qnt in dicio.items():
+        dicio2[num] = num*qnt
+
+    else:
+      dicio2[num] = 0
+
+  return dicio2
+
 
