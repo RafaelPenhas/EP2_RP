@@ -189,10 +189,12 @@ def faz_jogada(dados, categoria, dicio):
     categoria = 6
 
   if categoria in dicio['regra_avancada']:
-    dicio['regra_avancada'][categoria] = calcula_pontos_regra_avancada(dados)[categoria]
+    resultado = calcula_pontos_regra_avancada(dados)
+    dicio['regra_avancada'][categoria] = resultado[categoria]
         
-    if categoria in dicio['regra_simples']:
-      dicio['regra_simples'][categoria] = calcula_pontos_regra_simples(dados)[categoria]
+  if categoria in dicio['regra_simples']:
+    resultado = calcula_pontos_regra_simples(dados)
+    dicio['regra_simples'][categoria] = resultado[categoria]
 
   return dicio
 
