@@ -174,14 +174,29 @@ def calcula_pontos_regra_avancada(lista):
   return resultado
 
 def faz_jogada(dados, categoria, dicio):
-  from funcoes import calcula_pontos_regra_avancada
-  from funcoes import calcula_pontos_regra_simples
+
+  if categoria == "1":
+    categoria = 1
+  if categoria == "2":
+    categoria = 2
+  if categoria == "3":
+    categoria = 3
+  if categoria == "4":
+    categoria = 4
+  if categoria == "5":
+    categoria = 5
+  if categoria == "6":
+    categoria = 6
 
   for regra, especifico in dicio.items():
     for jogo, pontos in especifico.items():
       if jogo == categoria:
-        dicio[jogo] = categoria(dados)
-  
+        if categoria in calcula_pontos_regra_avancada:
+          dicio[categoria] = calcula_pontos_regra_avancada[categoria][dados]
+        
+        if categoria in calcula_pontos_regra_simples:
+          dicio[categoria] = calcula_pontos_regra_simples[categoria][dados]
+
   return dicio
 
 
