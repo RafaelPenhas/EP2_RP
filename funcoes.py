@@ -172,3 +172,17 @@ def calcula_pontos_regra_avancada(lista):
 }
   
   return resultado
+
+def faz_jogada(dados, categoria, dicio):
+  from funcoes import calcula_pontos_regra_avancada
+  from funcoes import calcula_pontos_regra_simples
+
+  for regra, especifico in dicio.items():
+    for jogo, pontos in especifico.items():
+      if jogo == categoria:
+        dicio[jogo] = categoria(dados)
+  
+  return dicio
+
+
+
