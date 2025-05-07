@@ -28,16 +28,16 @@ opcoes_validas = [0,1,2,3,4]
 
 lista_jogadas_cartela = [1,2,3,4,5,6,'sem_combinacao', 'quadra', 'full_house', 'sequencia_baixa', 'sequencia_alta', 'cinco_iguais']
 
-for i in range(len(lista_jogadas_cartela)+5):
+for i in range(len(lista_jogadas_cartela)):
     # while cartela['regra_simples'][i] == -1 or cartela['regra_avancada'][i] == -1:
     print('Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação: ')
     opcao = int(input())
     if opcao == 1:
         print('Digite o índice do dado a ser guardado (0 a 4):')
         guardar = int(input())
-        dados_rolados = funcoes.guardar_dados(dados_rolados, dados_guardados, guardar)[0]
+        dados_rolados = funcoes.guardar_dado(dados_rolados, dados_guardados, guardar)[0]
         print(f'Dados rolados: {dados_rolados}')
-        dados_guardados = funcoes.guardar_dados(dados_rolados, dados_guardados, guardar)[1]
+        dados_guardados = funcoes.guardar_dado(dados_rolados, dados_guardados, guardar)[1]
         print(f'Dados guardados: {dados_guardados}')
 
     if opcao == 2:
